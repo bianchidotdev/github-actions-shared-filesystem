@@ -5,6 +5,8 @@ on: push
 jobs:
   action1:
     runs-on: ubuntu-latest
+    container:
+      image: ruby:alpine
     steps:
       - name: store file
         run: |
@@ -15,7 +17,10 @@ jobs:
           #echo "oh hai from action1" >> /github/workspace/test.txt
           echo "oh hai from action1" >> /github/workflow/test.txt
   action2:
+    needs: [action1]
     runs-on: ubuntu-latest
+    container:
+      image: ruby:alpine
     steps:
       - name: read file
         run: |
