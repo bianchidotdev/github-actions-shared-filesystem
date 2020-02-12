@@ -12,7 +12,6 @@ jobs:
         run: |
           echo "oh hai from action1" >> $HOME/test.txt
           echo "oh hai from action1" >> $GITHUB_WORKSPACE/test.txt
-          echo "oh hai from action1" >> $GITHUB_EVENT_PATH/test.txt
   action2:
     runs-on: ubuntu-latest
     container:
@@ -22,5 +21,4 @@ jobs:
         run: |
           ls -lh $HOME
           ls -lh $GITHUB_WORKSPACE
-          ls -lh $GITHUB_EVENT_PATH
 
