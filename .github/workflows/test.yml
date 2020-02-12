@@ -1,0 +1,22 @@
+name: Test
+
+on: push
+
+jobs:
+  action1:
+    runs-on: ubuntu-latest
+    container:
+      image: ruby:alpine
+    steps:
+      - uses: actions/checkout@v1
+      - name: store file
+        run: echo "oh hai from action1" >> $GITHUB_WORKSPACE/test.txt
+  action2:
+    runs-on: ubuntu-latest
+    container:
+      image: ruby:alpine
+    steps:
+      - uses: actions/checkout@v1
+      - name: store file
+        run: cat $GITHUB_WORKSPACE/test.txt
+
