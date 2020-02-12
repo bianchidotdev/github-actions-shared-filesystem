@@ -8,7 +8,6 @@ jobs:
     steps:
       - name: store file
         run: |
-          ls -lh /github
           echo "oh hai from action1" >> $HOME/test.txt
           echo "oh hai from action1" >> $GITHUB_WORKSPACE/test.txt
           #echo "oh hai from action1" >> /github/home/test.txt
