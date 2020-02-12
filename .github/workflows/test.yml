@@ -26,6 +26,5 @@ jobs:
           ls -lh $HOME
           ls -lh $GITHUB_WORKSPACE
           ls -lh /github/home
-          ls -lh /github/workspace
           ls -lh/github/workflow
 
