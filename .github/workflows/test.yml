@@ -12,6 +12,9 @@ jobs:
         run: |
           echo "oh hai from action1" >> $HOME/test.txt
           echo "oh hai from action1" >> $GITHUB_WORKSPACE/test.txt
+          echo "oh hai from action1" >> /github/home/test.txt
+          echo "oh hai from action1" >> /github/workspace/test.txt
+          echo "oh hai from action1" >> /github/workflow/test.txt
   action2:
     runs-on: ubuntu-latest
     container:
@@ -21,4 +24,7 @@ jobs:
         run: |
           ls -lh $HOME
           ls -lh $GITHUB_WORKSPACE
+          ls -lh /github/home
+          ls -lh /github/workspace
+          ls -lh/github/workflow
 
