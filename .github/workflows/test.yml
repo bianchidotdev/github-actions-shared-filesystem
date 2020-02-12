@@ -17,6 +17,8 @@ jobs:
       image: ruby:alpine
     steps:
       - uses: actions/checkout@v1
-      - name: store file
-        run: cat $GITHUB_WORKSPACE/test.txt
+      - name: read file
+        run: |
+          ls -lh $GITHUB_WORKSPACE
+          cat $GITHUB_WORKSPACE/test.txt
 
